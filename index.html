@@ -7,28 +7,45 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div class="widget">
-		<div class="header">
-		<!-- Try adding/removing these classes: -->
-		<!-- disabled -->
-		<!-- playing -->
-		<div class="btn-play disabled"></div>
-
-		<div class="metadata">
-		  <p class="title">Hunger of The Pine</p>
-		  <p class="author">alt-J</p>
-
-		  <div class="seekbar">
-		    <progress value="5" max="30"></progress>
-		  </div>
+	<div class="row"></div>
+		<div class="col-sm-4">
+			<form class="js-submit search-form">
+					<div> 
+						<label for="track-search"><h1>Track</h1></label>
+					</div>
+					<div>
+						<input type="text" id="track-search" placeholder="Shaky Shaky" size="50"></input>
+					</div>
+					<div>
+						<button type="submit" id="button" class="btn btn-primary search-button">Search</button>
+					</div>
+				</form>
 		</div>
-		</div>
-		<div class="cover">
-		<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
-		</div>
+		<div class="col-sm-4">
+			<header class="page-title"><h1>Spotify Player</h1></header>
+			<div class="widget">
+				<div class="header">
+				<!-- Try adding/removing these classes: -->
+				<!-- disabled -->
+				<!-- playing -->
+				<div class="btn-play disabled"></div>
 
-		<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
-	</div>
+				<div class="metadata">
+				  <p class="title">Hunger of The Pine</p>
+				  <p class="author">alt-J</p>
 
+				  <div class="seekbar">
+				    <progress value="5" max="30"></progress>
+				  </div>
+				</div>
+				</div>
+				<div class="cover">
+				<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+				</div>
+
+				<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+			</div>
+		</div>
+	<div class="col-sm-4"></div>
 </body>
 </html>
