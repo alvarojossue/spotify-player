@@ -25,7 +25,9 @@ $(document).on("ready", function(){
 
 	$(".js-play").on("click", function(){
 		playPauseTrack();
+		$('.js-play-audio').on('timeupdate', printTime);
 	})
+
 });
 
 //------- function to display track title ------//
@@ -66,3 +68,13 @@ function playPauseTrack(the_items){
 		$('.js-play').addClass('disabled');
 	}
 }
+
+function printTime () {
+  var current = $('.js-play-audio').prop('currentTime');
+  console.debug('Current time: ' + current);
+  var html = `<progress value="${current}" max="30"></progress>`
+
+  $('.seekbar').empty();
+  $('.seekbar').append(html);
+}
+
