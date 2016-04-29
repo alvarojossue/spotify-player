@@ -1,9 +1,10 @@
 <html>
 <head>
 	<title>Spotify Player</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="   crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -32,7 +33,7 @@
 
 				<div class="metadata">
 				  <p class="title js-title">Song</p>
-				  <a href="#" class="author js-artist">Artist</a>
+				  <button class="author btn btn-link js-artist" value="">Artist</button>
 
 				  <div class="seekbar">
 				    <progress value="0" max="30"></progress>
@@ -48,7 +49,34 @@
 			</div>
 		</div>
 	<div class="col-sm-4">
-		
+		<div class="modal fade js-modal">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+
+		      <div class="modal-header">
+		        <!-- Close button -->
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span>&times;</span>
+		        </button>
+
+		        <h2 class="js-modal-name">Name</h2>
+		      </div>
+
+		      <div class="modal-body">
+		        <div class="js-image artist-image"></div>
+			        <dl class="dl-horizontal">
+			          <dt>Genres</dt>
+			          <dd class="js-modal-genres"></dd>
+			          <dt>Followers</dt>
+			          <dd class="js-modal-followers">23000</dd>
+			          <dt>Popularity</dt>
+			          <dd class="js-modal-popularity">99</dd>
+			        </dl>
+		      </div>
+
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
 	</div>
 </body>
 </html>

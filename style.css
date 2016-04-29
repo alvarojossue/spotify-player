@@ -120,6 +120,7 @@
 
 .author {
   font-weight: normal;
+  padding: 0px;
 }
 
 .seekbar {
@@ -164,4 +165,9 @@ progress::-webkit-progress-value {
 
 progress::-moz-progress-bar {
   background-color: #45a800;
+}
+
+.artist-image {
+  text-align: center;
+  margin-bottom: 10px;
 }
