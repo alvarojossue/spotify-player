@@ -1,4 +1,5 @@
 $(document).on("ready", function(){
+
 	$(".js-submit").on("submit", function(event){
 		event.preventDefault();
 
@@ -13,34 +14,18 @@ $(document).on("ready", function(){
 				displayTitle(theData.tracks.items)
 				displayArtist(theData.tracks.items)
 				displayCover(theData.tracks.items)
+				getAudio(theData.tracks.items)
 			},
 			error: function(theError){
 				console.log("It failed");
 				console.log(theError.responseJSON);
 			}
-
 		})
-
 	})
 
 	$(".js-play").on("click", function(){
-
-		var theTrack = $("#track-name").val();
-
-		$.ajax({
-			url: "https://api.spotify.com/v1/search?type=track&query=" + theTrack,
-			success: function(theData){
-				console.log("It worked");
-				console.log(theData);
-				playTrack(theData.tracks.items)
-			},
-			error: function(theError){
-				console.log("It failed");
-				console.log(theError.responseJSON);
-			}
-		})
+		playPauseTrack();
 	})
-
 });
 
 //------- function to display track title ------//
@@ -64,9 +49,20 @@ function displayCover(the_items){
 
 //--------- function to play track -------//
 
-function playTrack(the_items){
+function getAudio(the_items){
 	var html = `<audio class= "js-play-audio" src="${the_items[0].preview_url}"></audio>`
 	$(".js-audio").empty();
 	$(".js-audio").append(html);
-	$('.js-play-audio').trigger('play');
+}
+
+function playPauseTrack(the_items){
+	if ($(".js-play").hasClass('playing') === false){
+		$('.js-play-audio').trigger('play');
+		$('.js-play').removeClass('disabled');
+		$('.js-play').addClass('playing');
+	} else {
+		$('.js-play-audio').trigger('pause');
+		$('.js-play').removeClass('playing');
+		$('.js-play').addClass('disabled');
+	}
 }
